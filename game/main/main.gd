@@ -240,11 +240,11 @@ func _refresh_board() -> void:
 			style.corner_radius_bottom_right = 7
 			button.add_theme_stylebox_override("normal", style)
 
-			var hover := style.duplicate()
+			var hover := style.duplicate() as StyleBoxFlat
 			hover.bg_color = Color(minf(shade + 0.04, 1.0), minf(shade + 0.04, 1.0), minf(shade + 0.04, 1.0))
 			button.add_theme_stylebox_override("hover", hover)
 
-			var pressed := style.duplicate()
+			var pressed := style.duplicate() as StyleBoxFlat
 			pressed.bg_color = Color(maxf(shade - 0.06, 0.2), maxf(shade - 0.06, 0.2), maxf(shade - 0.06, 0.2))
 			button.add_theme_stylebox_override("pressed", pressed)
 
