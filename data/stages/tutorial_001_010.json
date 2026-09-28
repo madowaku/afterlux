@@ -1,0 +1,102 @@
+[
+  {
+    "id": "001",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 1,
+    "target": [[0,0,0,0],[1,0,0,0],[1,0,0,0],[1,0,0,0]],
+    "par": 1
+  },
+  {
+    "id": "002",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1"],
+    "allowed_lights": ["N","W"],
+    "max_dots_per_shot": 1,
+    "target": [[0,1,1,1],[0,0,0,0],[0,0,0,0],[0,0,0,0]],
+    "par": 1
+  },
+  {
+    "id": "003",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 1,
+    "target": [[0,0,0,0],[2,0,0,0],[2,0,0,0],[2,0,0,0]],
+    "par": 2
+  },
+  {
+    "id": "004",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","C1"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 1,
+    "target": [[0,0,0,0],[1,0,1,0],[1,0,1,0],[1,0,1,0]],
+    "par": 2
+  },
+  {
+    "id": "005",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","B3"],
+    "allowed_lights": ["N","W"],
+    "max_dots_per_shot": 1,
+    "target": [[0,0,0,0],[1,0,0,0],[1,0,1,1],[1,0,0,0]],
+    "par": 2
+  },
+  {
+    "id": "006",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","C1"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 2,
+    "target": [[0,0,0,0],[1,0,1,0],[1,0,1,0],[1,0,1,0]],
+    "par": 1
+  },
+  {
+    "id": "007",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","A2"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 2,
+    "target": [[0,0,0,0],[0,0,0,0],[2,0,0,0],[2,0,0,0]],
+    "par": 1
+  },
+  {
+    "id": "008",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","A2"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 2,
+    "target": [[0,0,0,0],[1,0,0,0],[2,0,0,0],[2,0,0,0]],
+    "par": 2
+  },
+  {
+    "id": "009",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","B1","C1"],
+    "allowed_lights": ["N","W"],
+    "max_dots_per_shot": 2,
+    "target": [[0,1,1,1],[1,1,0,0],[1,1,0,0],[1,1,0,0]],
+    "par": 2
+  },
+  {
+    "id": "010",
+    "width": 4,
+    "height": 4,
+    "sockets": ["A1","B1","C1"],
+    "allowed_lights": ["N"],
+    "max_dots_per_shot": 2,
+    "target": [[0,0,0,0],[2,1,0,0],[2,1,0,0],[2,1,0,0]],
+    "par": 2
+  }
+]
