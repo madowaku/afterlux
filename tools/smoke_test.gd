@@ -17,25 +17,36 @@ func _init() -> void:
 	var one_dot: Array[Vector2i] = [Vector2i(0, 0)]
 	var stacked: Array[Vector2i] = [Vector2i(0, 0), Vector2i(0, 1)]
 	var second_dot: Array[Vector2i] = [Vector2i(0, 1)]
+	var ok := true
 
 	var shot_a := RULES.make_shot(stage, one_dot, "N")
-	_assert_column(shot_a["delta"], [0, 1, 1, 1], "one DOT")
+	ok = _assert_column(shot_a["delta"], [0, 1, 1, 1], "one DOT") and ok
 
 	var shot_b := RULES.make_shot(stage, stacked, "N")
-	_assert_column(shot_b["delta"], [0, 0, 2, 2], "two DOTs grouped")
+	ok = _assert_column(shot_b["delta"], [0, 0, 2, 2], "two DOTs grouped") and ok
 
 	var total := RULES.empty_grid(1, 4)
 	total = RULES.apply_shot(total, shot_a["delta"])
 	var shot_c := RULES.make_shot(stage, second_dot, "N")
 	total = RULES.apply_shot(total, shot_c["delta"])
-	_assert_column(total, [0, 1, 2, 2], "two DOTs split")
+	ok = _assert_column(total, [0, 1, 2, 2], "two DOTs split") and ok
+
+	# Negative control: CI can prove that a deliberately wrong expectation fails.
+	if "--inject-smoke-failure" in OS.get_cmdline_user_args():
+		ok = _assert_column(shot_a["delta"], [0, 0, 1, 1], "intentional failure") and ok
+
+	if not ok:
+		push_error("AFTERLUX smoke test: FAIL")
+		quit(1)
+		return
 
 	print("AFTERLUX smoke test: PASS")
 	quit(0)
 
 
-func _assert_column(grid: Array, expected: Array, label: String) -> void:
+func _assert_column(grid: Array, expected: Array, label: String) -> bool:
 	for y in range(expected.size()):
 		if int(grid[y][0]) != int(expected[y]):
 			push_error("%s failed at row %d: got %s expected %s" % [label, y, grid[y][0], expected[y]])
-			quit(1)
+			return false
+	return true
