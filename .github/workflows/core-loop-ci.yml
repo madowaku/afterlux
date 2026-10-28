@@ -1,0 +1,51 @@
+name: AFTERLUX core loop verification
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/core-loop-ci.yml'
+      - 'data/stages/**'
+      - 'game/**'
+      - 'src/**'
+      - 'tools/**'
+      - 'project.godot'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-par:
+    name: Stage 001-010 minimum PAR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exhaustive independent solver
+        run: python tools/solver/verify_stages.py
+
+  godot-core:
+    name: Godot 4.7.2 rules and startup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.2
+          use-dotnet: false
+      - name: Verify engine version
+        run: godot --version
+      - name: Run rules fingerprint
+        run: godot --headless --path . --script res://tools/smoke_test.gd
+      - name: Confirm deliberately wrong fingerprint fails
+        shell: bash
+        run: |
+          if godot --headless --path . --script res://tools/smoke_test.gd -- --inject-smoke-failure; then
+            echo "::error::Negative control unexpectedly succeeded"
+            exit 1
+          fi
+          echo "PASS: injected incorrect fingerprint rejected"
+      - name: Start actual main scene in headless mode
+        run: godot --headless --path . --quit-after 5
