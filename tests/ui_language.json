@@ -1,0 +1,341 @@
+{
+  "scene_path": "res://tests/ui_fixture.tscn",
+  "viewport_size": {
+    "width": 360,
+    "height": 800
+  },
+  "settle_frames": 6,
+  "steps": [
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 121,
+        "y": 314
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 121,
+        "y": 314
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "assert",
+      "assertion": "property",
+      "node_path": ".",
+      "property": "stage_index",
+      "expected": 6
+    },
+    {
+      "type": "ui_report",
+      "label": "signature",
+      "path": "res://artifacts/signature_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/signature.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 287.5,
+        "y": 480
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 287.5,
+        "y": 480
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "assert",
+      "assertion": "property",
+      "node_path": ".",
+      "property": "stage_index",
+      "expected": 19
+    },
+    {
+      "type": "ui_report",
+      "label": "five_by_five",
+      "path": "res://artifacts/five_by_five_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/five_by_five.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 266,
+        "y": 38
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 266,
+        "y": 38
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "ui_report",
+      "label": "help",
+      "path": "res://artifacts/help_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/help.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 108,
+        "y": 188
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 108,
+        "y": 188
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 6
+    },
+    {
+      "type": "assert",
+      "assertion": "property",
+      "node_path": ".",
+      "property": "profile:language",
+      "expected": "ja"
+    },
+    {
+      "type": "ui_report",
+      "label": "japanese_help",
+      "path": "res://artifacts/japanese_help_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/japanese_help.png"
+    },
+    {
+      "type": "key",
+      "keycode": 4194305,
+      "pressed": true
+    },
+    {
+      "type": "key",
+      "keycode": 4194305,
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 6
+    },
+    {
+      "type": "ui_report",
+      "label": "japanese_board",
+      "path": "res://artifacts/japanese_board_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/japanese_board.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318,
+        "y": 38
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 6
+    },
+    {
+      "type": "ui_report",
+      "label": "japanese_studies",
+      "path": "res://artifacts/japanese_studies_layout.json",
+      "fail_on": [
+        "zero_size",
+        "overlap"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/japanese_studies.png"
+    },
+    {
+      "type": "key",
+      "keycode": 4194305,
+      "pressed": true
+    },
+    {
+      "type": "key",
+      "keycode": 4194305,
+      "pressed": false
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 266,
+        "y": 34
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 266,
+        "y": 34
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 6
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 252.0,
+        "y": 200.0
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 252.0,
+        "y": 200.0
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 6
+    },
+    {
+      "type": "assert",
+      "assertion": "property",
+      "node_path": ".",
+      "property": "profile:language",
+      "expected": "en"
+    },
+    {
+      "type": "ui_report",
+      "label": "english_again",
+      "path": "res://artifacts/english_again_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    }
+  ]
+}

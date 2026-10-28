@@ -1,0 +1,17 @@
+{
+  "scene_path": "res://tests/ui_studies_fixture.tscn",
+  "viewport_size": {
+    "width": 360,
+    "height": 800
+  },
+  "settle_frames": 6,
+  "steps": [
+    {"type": "mouse_button", "button_index": 1, "position": {"x": 318, "y": 38}, "pressed": true},
+    {"type": "mouse_button", "button_index": 1, "position": {"x": 318, "y": 38}, "pressed": false},
+    {"type": "wait_frames", "frames": 6},
+    {"type": "assert", "assertion": "property", "node_path": ".", "property": "stage_index", "expected": 99},
+    {"type": "assert", "assertion": "node_exists", "node_path": "Overlay"},
+    {"type": "ui_report", "label": "studies", "path": "res://artifacts/studies_layout.json", "fail_on": ["zero_size", "overlap"]},
+    {"type": "screenshot", "path": "res://artifacts/studies.png"}
+  ]
+}

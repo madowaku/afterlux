@@ -1,0 +1,9 @@
+{
+  "scene_path": "res://tests/ui_fixture.tscn",
+  "viewport_size": {"width": 412, "height": 915},
+  "settle_frames": 6,
+  "steps": [
+    {"type": "ui_report", "label": "tall", "path": "res://artifacts/tall_layout.json", "fail_on": ["any"]},
+    {"type": "screenshot", "path": "res://artifacts/tall.png"}
+  ]
+}

@@ -1,0 +1,220 @@
+keys,en,ja
+THE ART OF A LITTLE LESS,THE ART OF A LITTLE LESS,少ない光で、深いひらめき。
+How to play & settings,How to play & settings,遊び方・設定
+Choose a study,Choose a study,問題を選ぶ
+01 / READING LIGHT,01 / READING LIGHT,01 / 光を読む
+02 / TOGETHER & APART,02 / TOGETHER & APART,02 / まとめる・分ける
+03 / HIDDEN LAYERS,03 / HIDDEN LAYERS,03 / 隠れた重なり
+04 / EVERY DIRECTION,04 / EVERY DIRECTION,04 / 四方からの光
+First light,First light,はじめの光
+A new angle,A new angle,向きを変えて
+Afterglow,Afterglow,残る影
+Two beginnings,Two beginnings,ふたつの始まり
+Crossing paths,Crossing paths,交わる影
+Better together,Better together,一緒に照らす
+The quiet space,The quiet space,静かな空白
+One at a time,One at a time,ひとつずつ
+A little of both,A little of both,ひとりとふたり
+Less is more,Less is more,あと一手、少なく
+Read between,Read between,空白を読む
+Hidden layers,Hidden layers,影をほどく
+Three small acts,Three small acts,三つの小さな光
+A different sum,A different sum,違う重ね方
+Same places,Same places,同じ場所から
+Full circle,Full circle,四方の光
+Changing sides,Changing sides,反対側から
+A deeper shade,A deeper shade,深まる影
+Quiet complexity,Quiet complexity,静かな難問
+"Light, mastered","Light, mastered",光を極める
+SHOTS,SHOTS,手数
+PAR,PAR,最短
+BEST,BEST,ベスト
+%02d  SHADOWS LEFT,%02d  SHADOWS LEFT,残りの影  %02d
+DOTS  %d / %d,DOTS  %d / %d,点  %d / %d
+○  DOT socket       1  shadow still needed,○  DOT socket       1  shadow still needed,○ 点を置く場所       1 必要な影の数
+Light from north,Light from north,上からの光・影は下へ
+Light from south,Light from south,下からの光・影は上へ
+Light from west,Light from west,左からの光・影は右へ
+Light from east,Light from east,右からの光・影は左へ
+↓  N,↓  N,↓  上
+↑  S,↑  S,↑  下
+→  W,→  W,→  左
+←  E,←  E,←  右
+CAST LIGHT,CAST LIGHT,光を放つ
+CASTING…,CASTING…,照らしています…
+Undo,Undo,一手戻す
+Restart,Restart,やり直す
+SOLVE FIRST.  COMPRESS LATER.,SOLVE FIRST.  COMPRESS LATER.,まず解く。それから、手数を磨く。
+Perfectly simple.,Perfectly simple.,これ以上ない、一手ずつ。
+A beautiful beginning.,A beautiful beginning.,解けました。次は、もっと短く。
+PAR %d · Every shot earned its place.,PAR %d · Every shot earned its place.,最短 %d 手。無駄のない光でした。
+Cleared in %d. Can you find the %d-shot solution?,Cleared in %d. Can you find the %d-shot solution?,%d 手でクリア。最短の %d 手に挑んでみませんか。
+NEXT STUDY  →,NEXT STUDY  →,次の問題へ  →
+EXPLORE THE STUDIES,EXPLORE THE STUDIES,問題一覧へ
+01 / PLACE A DOT,01 / PLACE A DOT,01 / 輪に点を置こう
+02 / LIGHT FROM %s · READY,02 / LIGHT FROM %s · READY,02 / %sから照らす準備ができました
+NORTH,NORTH,上
+SOUTH,SOUTH,下
+WEST,WEST,左
+EAST,EAST,右
+Up to %d DOTs this shot. Tap a placed DOT to remove it.,Up to %d DOTs this shot. Tap a placed DOT to remove it.,一度に置ける点は %d 個まで。置いた点をタップすると外せます。
+Too much shadow. Coral cells show the excess. Undo and try another layer.,Too much shadow. Coral cells show the excess. Undo and try another layer.,赤いマスは影が多すぎます。一手戻して、重ね方を変えてみよう。
+That shadow stays. Place the next layer.,That shadow stays. Place the next layer.,今の影は残ります。次の影を重ねてみよう。
+One layer rewound. Try a different grouping or light.,One layer rewound. Try a different grouping or light.,一手戻しました。点の組み合わせや光の向きを変えてみよう。
+Progress could not be saved. You can keep playing this session.,Progress could not be saved. You can keep playing this session.,記録を保存できませんでした。このまま遊ぶことはできます。
+Sound on · tap to mute,Sound on · tap to mute,音あり・タップで消音
+Sound off · tap to unmute,Sound off · tap to unmute,消音中・タップで音を出す
+BACK TO THE LIGHT,BACK TO THE LIGHT,パズルに戻る
+Light studies,Light studies,光の問題集
+20 small puzzles. Explore freely; every study remembers your layers.,20 small puzzles. Explore freely; every study remembers your layers.,20問の小さなひらめき。好きな問題からどうぞ。途中の影も保存されます。
+ · PAR achieved, · PAR achieved,・最短達成
+%d / 20 CLEARED    ·  clear    *  at PAR,%d / 20 CLEARED    ·  clear    *  at PAR,%d / 20 クリア    · クリア    * 最短
+A little light.,A little light.,遊び方・設定
+Make every number reach zero. Take all the time you need.,Make every number reach zero. Take all the time you need.,影を重ねて、すべての数字をゼロに。時間制限はありません。
+01  PLACE,01  PLACE,01  点を置く
+Tap a ring to place a DOT. Tap it again to remove it.,Tap a ring to place a DOT. Tap it again to remove it.,輪をタップして点を置きます。もう一度タップすると外せます。
+02  CAST,02  CAST,02  光を放つ
+Pick a light. Each DOT adds 1 shadow to every cell beyond it. Shadows stay between shots.,Pick a light. Each DOT adds 1 shadow to every cell beyond it. Shadows stay between shots.,光の向きを選びます。点の先に影が1つずつ伸び、放った後も影は残ります。
+03  DISCOVER,03  DISCOVER,03  違いを見つける
+"DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results.","DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results.",点のあるマスには、その回の影がつきません。影はその先へ進みます。まとめて置くか、分けるかで結果が変わります。
+04  COMPRESS,04  COMPRESS,04  手数を磨く
+Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited.,Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited.,数字がすべてゼロならクリア。最短は検証済みの最小手数です。何度でも一手戻せます。
+Motion: reduced,Motion: reduced,演出：控えめ
+Motion: full,Motion: full,演出：あり
+"Art & audio: Kenney · CC0
+No timer. No penalty for trying.
+Keyboard: Tab / Enter · Ctrl+Z to undo","Art & audio: Kenney · CC0
+No timer. No penalty for trying.
+Keyboard: Tab / Enter · Ctrl+Z to undo","素材・音：Kenney / CC0
+時間制限も、試すことへのペナルティもなし。
+Tab / Enter で操作・Ctrl+Z で一手戻す"
+A fresh start?,A fresh start?,最初から考え直す？
+This clears the current layers. Your best result stays saved.,This clears the current layers. Your best result stays saved.,今の影を消して、最初から始めます。ベスト記録は残ります。
+RESTART THIS STUDY,RESTART THIS STUDY,この問題をやり直す
+%s%d · %d shadow needed%s,%s%d · %d shadow needed%s,%s%d・必要な影 %d%s
+ · DOT socket, · DOT socket,・点を置ける場所
+Tap the ring to place a DOT. Light from above casts a shadow below it.,Tap the ring to place a DOT. Light from above casts a shadow below it.,輪をタップして点を置こう。上からの光で、点の下に影が伸びます。
+Choose where light enters. The arrow shows where the shadow travels.,Choose where light enters. The arrow shows where the shadow travels.,光の来る向きを選ぼう。矢印は影が伸びる向きです。
+Shadows stay after each shot. A 2 needs two layers of shadow.,Shadows stay after each shot. A 2 needs two layers of shadow.,影は次の手にも残ります。「2」には影を2つ重ねよう。
+"Two sockets, one DOT per shot. Build one layer, then the next.","Two sockets, one DOT per shot. Build one layer, then the next.",置ける場所はふたつ。一度に置ける点はひとつ。順番に影を重ねよう。
+Light can travel down or across. Find a place for each shadow.,Light can travel down or across. Find a place for each shadow.,影は下にも、横にも伸びます。それぞれの影の始まりを探そう。
+You can now place two DOTs before casting. Can one shot do both jobs?,You can now place two DOTs before casting. Can one shot do both jobs?,今度は点を2つ置けます。一度の光で、ふたつの影を作れるかな。
+"DOT cells receive no shadow this shot. Beyond them, shadows add up.","DOT cells receive no shadow this shot. Beyond them, shadows add up.",点のあるマスに、その回の影はつきません。その先では影が重なります。
+"Same sockets, a different target. What changes if you split the shots?","Same sockets, a different target. What changes if you split the shots?",同じ場所でも、目標は別。光を分けて放つと、何が変わるかな。
+One DOT or two? Different layers may need different groupings.,One DOT or two? Different layers may need different groupings.,点はひとつ？ それともふたつ？ 影ごとに組み合わせを考えよう。
+Find a clear first. Then try to make the same shadows in fewer shots.,Find a clear first. Then try to make the same shadows in fewer shots.,まずはクリアを目指そう。それから、同じ影をもっと少ない手数で。
+"Read the empty spaces, too. A zero tells you where a shadow cannot fall.","Read the empty spaces, too. A zero tells you where a shadow cannot fall.",空白も手がかり。ゼロのマスには影を落とせません。
+Separate the target into simple layers. Which shadow belongs on its own?,Separate the target into simple layers. Which shadow belongs on its own?,目標を単純な影に分けてみよう。ひとつで作る影はどれだろう。
+An aligned pair can leave a quiet space between layers.,An aligned pair can leave a quiet space between layers.,並べたふたつの点で、影の中に静かな空白を残せます。
+A 3 is several shadows meeting. Find the pieces of the sum.,A 3 is several shadows meeting. Find the pieces of the sum.,「3」は影がいくつも出会う場所。その足し算をほどいてみよう。
+"Familiar sockets, a new arrangement. Look again before casting.","Familiar sockets, a new arrangement. Look again before casting.",見覚えのある配置も、目標が変われば別の問題。もう一度よく見よう。
+All four lights are available. Arrows show the direction shadows travel.,All four lights are available. Arrows show the direction shadows travel.,四方から光を放てます。矢印は、影が伸びる向きです。
+Start with the cells that only one direction can reach.,Start with the cells that only one direction can reach.,ひとつの向きからしか影を作れないマスを探そう。
+DOTs protect their cells while shadows continue beyond them.,DOTs protect their cells while shadows continue beyond them.,点は自分のマスを影から守ります。影は、その先へ進みます。
+Small layers build a complex whole. Take your time; Undo is unlimited.,Small layers build a complex whole. Take your time; Undo is unlimited.,複雑な影も、小さな重なりから。何度でも戻して、ゆっくり考えよう。
+Five by five. Everything you need is already in the rules.,Five by five. Everything you need is already in the rules.,5×5の盤面へ。必要なルールは、もうすべて知っています。
+05 / ZERO HAS A SHAPE,05 / ZERO HAS A SHAPE,05 / 余白に気づく
+Zero has a shape,Zero has a shape,ゼロにもかたち
+06 / CROSSING LIGHT,06 / CROSSING LIGHT,06 / 交わる光
+Crossing light,Crossing light,交わる光
+07 / GROUP & SPLIT,07 / GROUP & SPLIT,07 / まとめる・分ける
+Group & split,Group & split,まとめる・分ける
+08 / FOUR EDGES,08 / FOUR EDGES,08 / 四方の光
+Four edges,Four edges,四方の光
+09 / DEEPER LOGIC,09 / DEEPER LOGIC,09 / 深いロジック
+Deeper logic,Deeper logic,深い推理
+10 / OPEN HORIZON,10 / OPEN HORIZON,10 / 広がる盤面
+Open horizon,Open horizon,広がる盤面
+11 / MASTERY,11 / MASTERY,11 / 熟達
+Mastery,Mastery,熟達
+12 / FINALE,12 / FINALE,12 / 光の集大成
+Finale,Finale,光の集大成
+A Place for Quiet,A Place for Quiet,静けさの場所
+Between the Rays,Between the Rays,光のあいだ
+An Empty Step,An Empty Step,空いた一手
+The Missing Number,The Missing Number,消えた数字
+A Narrow Silence,A Narrow Silence,細い静寂
+Something Left Out,Something Left Out,残した余白
+The Gentle Gap,The Gentle Gap,やさしい空白
+Before the Shadow,Before the Shadow,影が来る前
+Still a Little Room,Still a Little Room,まだある余地
+Where Light Pauses,Where Light Pauses,光の止まる場所
+Meet Me in the Middle,Meet Me in the Middle,真ん中で出会う
+A Second Approach,A Second Approach,もうひとつの向き
+The Corner Between,The Corner Between,角を曲がって
+"A Crossing, Twice","A Crossing, Twice",交差する二つの光
+A Quiet Intersection,A Quiet Intersection,静かな交点
+From Here and There,From Here and There,こちらから、あちらから
+The Other Row,The Other Row,もうひとつの行
+Parallel Thoughts,Parallel Thoughts,平行する考え
+Almost Together,Almost Together,あと少しで交わる
+A Meeting of Shadows,A Meeting of Shadows,影の待ち合わせ
+"Together, Not Twice","Together, Not Twice",ふたつでひとつ
+The Split Decision,The Split Decision,分けるという選択
+Paired in Silence,Paired in Silence,静けさを分け合う
+One More Together,One More Together,もうひと組
+In Two Movements,In Two Movements,ふたつの手で
+The Grouping Problem,The Grouping Problem,組み合わせの妙
+A Shared Beginning,A Shared Beginning,同じ始まりから
+Split the Difference,Split the Difference,ちょうどよく分ける
+An Unexpected Pair,An Unexpected Pair,思いがけない組
+Together or Apart,Together or Apart,一緒に、それとも別々
+"North, Then Quiet","North, Then Quiet",北からの余白
+East of the Answer,East of the Answer,答えの東側
+A Change of Bearing,A Change of Bearing,光路を変えて
+"One Cell, Four Ways","One Cell, Four Ways",ひとマス、四つの道
+The Far Edge,The Far Edge,向こう側の光
+Light Comes Around,Light Comes Around,巡る光
+Across the Board,Across the Board,盤面を横切って
+The Opposite Edge,The Opposite Edge,反対側から
+Every Way Home,Every Way Home,四方から導く
+Directional Thinking,Directional Thinking,向きを読む
+Count Backwards,Count Backwards,逆から数える
+The Only Way In,The Only Way In,唯一の入り口
+A Deliberate Detour,A Deliberate Detour,回り道の理由
+The Sum of Small Things,The Sum of Small Things,小さな影の総和
+Prove the Zero,Prove the Zero,ゼロを証明する
+Narrowing the Field,Narrowing the Field,可能性をしぼる
+First Principles,First Principles,一手ずつ確かめる
+A Case for Patience,A Case for Patience,じっくり考える
+Look Twice,Look Twice,もう一度、盤面を
+Careful Arithmetic,Careful Arithmetic,ていねいな足し算
+An Open Horizon,An Open Horizon,見晴らす盤面
+Five Rows of Calm,Five Rows of Calm,五列の静けさ
+The Long Way Across,The Long Way Across,盤面の向こうまで
+More Room to Think,More Room to Think,広い思考の余地
+Space Between,Space Between,マスとマスのあいだ
+A Larger Silence,A Larger Silence,大きな余白
+A Wider Angle,A Wider Angle,広い視野で
+The Quiet Distance,The Quiet Distance,静かな距離
+Look to the Edges,Look to the Edges,盤面の縁を読む
+Room for One More,Room for One More,あとひとマス
+A Patient Light,A Patient Light,待つ光
+The Hidden Decomposition,The Hidden Decomposition,隠れた分解
+Three Lines Meet,Three Lines Meet,三本の道が出会う
+A Subtle Difference,A Subtle Difference,わずかな違い
+Every Shot Matters,Every Shot Matters,一手も余さず
+A Measured Shadow,A Measured Shadow,測られた影
+The Last Direction,The Last Direction,最後の向き
+A Study in Restraint,A Study in Restraint,抑制の一題
+Nothing by Chance,Nothing by Chance,偶然のない一手
+Shadows in Balance,Shadows in Balance,影の均衡
+The Light We Learned,The Light We Learned,学んだ光を重ねて
+All the Ways Home,All the Ways Home,すべての道をたどって
+The Longest Quiet,The Longest Quiet,いちばん深い静けさ
+Everything in Its Place,Everything in Its Place,すべての影の居場所
+The Hidden Whole,The Hidden Whole,見えない全体像
+"A Last, Little Gap","A Last, Little Gap",最後に残る余白
+Keep the Light Moving,Keep the Light Moving,光を止めずに
+The Shape of Together,The Shape of Together,一緒に作るかたち
+An Answer in Layers,An Answer in Layers,影を重ねた答え
+After the Final Ray,After the Final Ray,最後の光のその先
+The empty cells are part of the pattern. Notice where a shadow must not land.,The empty cells are part of the pattern. Notice where a shadow must not land.,空白も目標の一部です。影を落としてはいけない場所に注目しよう。
+Trace the required totals along their rows and columns. Which directions can reach each one?,Trace the required totals along their rows and columns. Which directions can reach each one?,目標の数字から行と列をたどろう。それぞれのマスへ届く向きは？
+Compare putting the dots together with splitting them across shots. The zero-holes change.,Compare putting the dots together with splitting them across shots. The zero-holes change.,点を一緒に置く場合と、手を分ける場合を比べよう。ゼロの場所が変わります。
+The arrow shows shadow travel. Work back from the target to the edge light.,The arrow shows shadow travel. Work back from the target to the edge light.,矢印は影が伸びる向きです。目標から盤面の縁へさかのぼろう。
+Start with a number that has few possible incoming rays. Let it narrow the choices.,Start with a number that has few possible incoming rays. Let it narrow the choices.,届く光が限られる数字を見つけよう。それが他の選択をしぼります。
+Scan the five-by-five pattern before firing. A distant cell can rule out a direction.,Scan the five-by-five pattern before firing. A distant cell can rule out a direction.,放つ前に5×5の模様を見渡そう。離れたマスが向きを決める手がかりです。
+Work backwards from the most constrained cells. Every shot still follows the same simple rules.,Work backwards from the most constrained cells. Every shot still follows the same simple rules.,選択肢の少ないマスから逆向きに考えよう。ルールはいつも同じです。
+"Bring the whole toolkit together: direction, grouping, empty cells and persistent layers.","Bring the whole toolkit together: direction, grouping, empty cells and persistent layers.",学んだ考え方を重ねよう。光の向き、点の組、空白、残る影がすべて手がかりです。
+%d / 100 CLEARED    ·  clear    *  at PAR,%d / 100 CLEARED    ·  clear    *  at PAR,%d / 100 クリア    · クリア    * 最短
