@@ -1,0 +1,95 @@
+name: AFTERLUX 100-study verification
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/afterlux-100-ci.yml'
+      - 'data/stages/**'
+      - 'game/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'assets/**'
+      - 'localization/**'
+      - 'project.godot'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-bank:
+    name: 100 PAR proofs, uniqueness and witnesses
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all 100 studies with independent Python solver
+        run: |
+          set -o pipefail
+          python tools/solver/verify_stages.py | tee stage-bank.log
+          test "$(grep -c '\[OK\]' stage-bank.log)" -eq 100
+          ! grep -q '\[FAIL\]' stage-bank.log
+
+  godot-gameplay:
+    name: Godot 4.7.2 rules and 100-study gameplay
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.2
+          use-dotnet: false
+      - name: Confirm Godot version
+        run: godot --version
+      - name: Import project assets and translations
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p artifacts
+          touch artifacts/.gdignore
+          timeout 180s godot --headless --path . --import 2>&1 | tee artifacts/ci-import.log
+          if grep -Eq 'SCRIPT ERROR:|^ERROR:' artifacts/ci-import.log; then
+            echo "::error::Godot import logged an error"
+            exit 1
+          fi
+      - name: Run rule fingerprint smoke
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 60s godot --headless --path . --script tools/smoke_test.gd 2>&1 | tee artifacts/ci-smoke.log
+          grep -q 'AFTERLUX smoke test: PASS' artifacts/ci-smoke.log
+          ! grep -Eq 'SCRIPT ERROR:|^ERROR:' artifacts/ci-smoke.log
+      - name: Verify intentionally wrong fingerprint is rejected
+        shell: bash
+        run: |
+          if timeout 60s godot --headless --path . --script tools/smoke_test.gd -- --inject-smoke-failure > artifacts/ci-negative.log 2>&1; then
+            cat artifacts/ci-negative.log
+            echo "::error::Injected rule mismatch was incorrectly accepted"
+            exit 1
+          fi
+          grep -q 'AFTERLUX smoke test: FAIL' artifacts/ci-negative.log
+      - name: Play and undo every study with stored solution
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 360s godot --headless --path . --script tests/gameplay_flow.gd 2>&1 | tee artifacts/ci-gameplay.log
+          grep -q 'AFTERLUX gameplay flow: PASS' artifacts/ci-gameplay.log
+          ! grep -Eq 'SCRIPT ERROR:|^ERROR:|^WARNING:' artifacts/ci-gameplay.log
+      - name: Boot real main scene (headless only)
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 60s godot --headless --path . --quit-after 5 2>&1 | tee artifacts/ci-startup.log
+          ! grep -Eq 'SCRIPT ERROR:|^ERROR:' artifacts/ci-startup.log
+      - name: Preserve diagnostic logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: afterlux-100-ci-logs
+          path: artifacts/ci-*.log
+          if-no-files-found: ignore
