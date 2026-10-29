@@ -45,8 +45,9 @@ func _draw() -> void:
 	var border: Color = Color("2b4549")
 	var numeral: Color = STYLE.PAPER
 	if remaining > 0:
-		fill = STYLE.PAPER
-		border = STYLE.PAPER
+		# Lit paper darkens one step per shadow layer it has already received.
+		fill = STYLE.PAPER.darkened(minf(0.3, 0.11 * accumulated))
+		border = fill
 		numeral = STYLE.INK
 	elif accumulated > 0:
 		fill = Color("25483f")
@@ -78,6 +79,7 @@ func _draw() -> void:
 		draw_polyline(PackedVector2Array([center + Vector2(-5, 0), center + Vector2(-1, 4), center + Vector2(6, -4)]), STYLE.MINT, 1.5, true)
 	else:
 		draw_circle(center, 1.5, Color("476066"), true, -1, true)
+	_draw_layers()
 	if has_focus():
 		var focus: StyleBoxFlat = STYLE.box(Color.TRANSPARENT, STYLE.GOLD, 10, 0)
 		focus.draw_center = false
@@ -87,3 +89,21 @@ func _draw() -> void:
 func _draw_number(font: Font, value: String, baseline: Vector2, font_size: int, tint: Color) -> void:
 	var width: float = font.get_string_size(value, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
 	draw_string(font, baseline - Vector2(width * 0.5, 0), value, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, tint)
+
+# One pip per shadow layer: filled = received, hollow = still needed, coral = excess.
+func _draw_layers() -> void:
+	var count: int = maxi(target, accumulated)
+	if count == 0:
+		return
+	var gap: float = minf(9.0, (size.x - 16.0) / count)
+	var radius: float = minf(2.6, gap * 0.32)
+	var origin: Vector2 = Vector2(size.x * 0.5 - gap * (count - 1) * 0.5, size.y - 8.0)
+	var lit: bool = remaining > 0
+	for i: int in range(count):
+		var at: Vector2 = origin + Vector2(gap * i, 0)
+		if i >= target:
+			draw_circle(at, radius, STYLE.ERROR, true, -1, true)
+		elif i < accumulated:
+			draw_circle(at, radius, STYLE.INK if lit else STYLE.MINT, true, -1, true)
+		else:
+			draw_arc(at, radius, 0, TAU, 16, STYLE.INK if lit else STYLE.MUTED, 1.0, true)

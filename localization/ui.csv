@@ -31,7 +31,7 @@ PAR,PAR,最短
 BEST,BEST,ベスト
 %02d  SHADOWS LEFT,%02d  SHADOWS LEFT,残りの影  %02d
 DOTS  %d / %d,DOTS  %d / %d,点  %d / %d
-○  DOT socket       1  shadow still needed,○  DOT socket       1  shadow still needed,○ 点を置く場所       1 必要な影の数
+○  DOT socket    1  shadow still needed    ●○  layers,○  DOT socket    1  shadow still needed    ●○  layers,○ 点を置く場所    1 必要な影の数    ●○ 影の層
 Light from north,Light from north,上からの光・影は下へ
 Light from south,Light from south,下からの光・影は上へ
 Light from west,Light from west,左からの光・影は右へ
@@ -75,9 +75,9 @@ Make every number reach zero. Take all the time you need.,Make every number reac
 Tap a ring to place a DOT. Tap it again to remove it.,Tap a ring to place a DOT. Tap it again to remove it.,輪をタップして点を置きます。もう一度タップすると外せます。
 02  CAST,02  CAST,02  光を放つ
 Pick a light. Each DOT adds 1 shadow to every cell beyond it. Shadows stay between shots.,Pick a light. Each DOT adds 1 shadow to every cell beyond it. Shadows stay between shots.,光の向きを選びます。点の先に影が1つずつ伸び、放った後も影は残ります。
-03  DISCOVER,03  DISCOVER,03  違いを見つける
+04  DISCOVER,04  DISCOVER,04  違いを見つける
 "DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results.","DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results.",点のあるマスには、その回の影がつきません。影はその先へ進みます。まとめて置くか、分けるかで結果が変わります。
-04  COMPRESS,04  COMPRESS,04  手数を磨く
+05  COMPRESS,05  COMPRESS,05  手数を磨く
 Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited.,Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited.,数字がすべてゼロならクリア。最短は検証済みの最小手数です。何度でも一手戻せます。
 Motion: reduced,Motion: reduced,演出：控えめ
 Motion: full,Motion: full,演出：あり
@@ -218,3 +218,7 @@ Scan the five-by-five pattern before firing. A distant cell can rule out a direc
 Work backwards from the most constrained cells. Every shot still follows the same simple rules.,Work backwards from the most constrained cells. Every shot still follows the same simple rules.,選択肢の少ないマスから逆向きに考えよう。ルールはいつも同じです。
 "Bring the whole toolkit together: direction, grouping, empty cells and persistent layers.","Bring the whole toolkit together: direction, grouping, empty cells and persistent layers.",学んだ考え方を重ねよう。光の向き、点の組、空白、残る影がすべて手がかりです。
 %d / 100 CLEARED    ·  clear    *  at PAR,%d / 100 CLEARED    ·  clear    *  at PAR,%d / 100 クリア    · クリア    * 最短
+03  STACK,03  STACK,03  影を重ねる
+"Every DOT casts its own shadow. DOTs in the same line overlap, so one shot can add 2 to a cell. The dots under each cell count its layers.","Every DOT casts its own shadow. DOTs in the same line overlap, so one shot can add 2 to a cell. The dots under each cell count its layers.",点はひとつずつ自分の影を落とします。同じ線上に並んだ点の影は重なるので、1回の光でも2つ増えるマスがあります。マスの下の小さな丸が影の層の数です。
+Shadows overlapped: one shot added +%d to a cell. DOTs in a line each cast their own shadow.,Shadows overlapped: one shot added +%d to a cell. DOTs in a line each cast their own shadow.,影が重なりました。1回の光で +%d のマスがあります。並んだ点は、それぞれ自分の影を落とします。
+TRY FOR PAR,TRY FOR PAR,最短手に挑む

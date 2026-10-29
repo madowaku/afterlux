@@ -49,6 +49,7 @@ under the included SIL OFL license so Japanese works without system fonts.
 python tools/solver/verify_stages.py
 & 'path/to/Godot_console.exe' --headless --path . --script tools/smoke_test.gd
 & 'path/to/Godot_console.exe' --headless --path . --script tests/gameplay_flow.gd
+& 'path/to/Godot_console.exe' --headless --path . --script tests/shadow_layers_flow.gd
 ```
 
 Import the project once before running the GDScript tests. For a complete local
@@ -61,6 +62,8 @@ logic check with isolated test saves and captured diagnostics:
 The Python solver proves PAR, checks the documented solution, and counts optimal
 SHOT multisets independently of Godot. The gameplay test exercises every study,
 above-PAR clears, Undo, overshoot recovery, resume, settings and navigation.
+`tools/capture_screens.gd` (run without `--headless`) renders the shadow-layer
+lesson, CLEAR/PAR results and help to `artifacts/screens/`.
 `tests/ui_*.json` are rendered input/layout scenarios for the Godot skill's
 `scenario_runner.gd`; their disposable saves and images go under `artifacts/`.
 
