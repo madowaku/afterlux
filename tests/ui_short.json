@@ -1,0 +1,22 @@
+{
+  "scene_path": "res://tests/ui_fixture.tscn",
+  "viewport_size": {
+    "width": 360,
+    "height": 640
+  },
+  "settle_frames": 6,
+  "steps": [
+    {
+      "type": "ui_report",
+      "label": "short",
+      "path": "res://artifacts/short_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/short.png"
+    }
+  ]
+}

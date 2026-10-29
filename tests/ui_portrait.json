@@ -1,0 +1,9 @@
+{
+  "scene_path": "res://tests/ui_fixture.tscn",
+  "viewport_size": {"width": 360, "height": 800},
+  "settle_frames": 6,
+  "steps": [
+    {"type": "ui_report", "label": "portrait", "path": "res://artifacts/portrait_layout.json", "fail_on": ["any"]},
+    {"type": "screenshot", "path": "res://artifacts/portrait.png"}
+  ]
+}

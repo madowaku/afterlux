@@ -1,0 +1,115 @@
+{
+  "scene_path": "res://tests/ui_fixture.tscn",
+  "viewport_size": {
+    "width": 360,
+    "height": 800
+  },
+  "settle_frames": 6,
+  "steps": [
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 65.5,
+        "y": 247.5
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 65.5,
+        "y": 247.5
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/selected.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 180.0,
+        "y": 708.0
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 180.0,
+        "y": 708.0
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "wait_until",
+      "node_path": ".",
+      "property": "solved",
+      "expected": true
+    },
+    {
+      "type": "wait_seconds",
+      "seconds": 0.8
+    },
+    {
+      "type": "ui_report",
+      "label": "clear",
+      "path": "res://artifacts/clear_layout.json",
+      "fail_on": [
+        "any"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/clear.png"
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318.0,
+        "y": 34.0
+      },
+      "pressed": true
+    },
+    {
+      "type": "mouse_button",
+      "button_index": 1,
+      "position": {
+        "x": 318.0,
+        "y": 34.0
+      },
+      "pressed": false
+    },
+    {
+      "type": "wait_frames",
+      "frames": 4
+    },
+    {
+      "type": "ui_report",
+      "label": "studies",
+      "path": "res://artifacts/studies_layout.json",
+      "fail_on": [
+        "zero_size",
+        "overlap"
+      ]
+    },
+    {
+      "type": "screenshot",
+      "path": "res://artifacts/studies.png"
+    }
+  ]
+}

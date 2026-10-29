@@ -1,0 +1,10 @@
+{
+  "scene_path": "res://tests/ui_studies_fixture.tscn",
+  "viewport_size": {"width": 360, "height": 800},
+  "settle_frames": 6,
+  "steps": [
+    {"type": "assert", "assertion": "property", "node_path": ".", "property": "stage_index", "expected": 99},
+    {"type": "ui_report", "label": "finale_100", "path": "res://artifacts/finale_100_layout.json", "fail_on": ["any"]},
+    {"type": "screenshot", "path": "res://artifacts/finale_100.png"}
+  ]
+}

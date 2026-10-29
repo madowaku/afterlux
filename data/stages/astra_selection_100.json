@@ -1,0 +1,970 @@
+{
+  "curator_model": "GPT-6 Astra",
+  "reasoning": "xhigh",
+  "pool_seed": 20260929,
+  "pool_count": 700,
+  "selection_count": 80,
+  "selections": [
+    {
+      "candidate_id": "candidate-000756",
+      "tier": "aha",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "C1 shields C4's upward beam; C4's sideways shot supplies the separate two-cell bar.",
+      "tags": [
+        "zero-hole",
+        "edge-shield",
+        "two-shot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001100",
+      "tier": "aha",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "The same adjacent pair makes vertical traces and a doubled horizontal trace while keeping B2 clear.",
+      "tags": [
+        "direction-pivot",
+        "zero-hole",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000301",
+      "tier": "aha",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "B2's required 1 forbids grouping the upward shots; the right arm adds a clean directional change.",
+      "tags": [
+        "split-required",
+        "positive-socket",
+        "persistent-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001815",
+      "tier": "aha",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "Equal upper traces and unequal lower traces identify shared and solo layers.",
+      "tags": [
+        "opposing-lights",
+        "solo-plus-group",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001239",
+      "tier": "aha",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "The 2-0-2-1 row requires shielding B1; the lower bar anchors the other direction.",
+      "tags": [
+        "zero-hole",
+        "opposing-lights",
+        "asymmetric-row"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001796",
+      "tier": "aha",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "B4 receives one layer while being protected in another, distinguishing solo from grouped shots.",
+      "tags": [
+        "partial-protection",
+        "solo-plus-group",
+        "two-sockets"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001454",
+      "tier": "aha",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "A zero at D3 and a 3 beneath it force a protected double layer plus a solo layer.",
+      "tags": [
+        "zero-hole",
+        "layer-decomposition",
+        "two-sockets"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001772",
+      "tier": "aha",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "Unequal vertical stripes and the doubled bottom tip require different groupings for the two directions.",
+      "tags": [
+        "direction-pivot",
+        "zero-hole",
+        "unequal-stripes"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000875",
+      "tier": "aha",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "Unequal lower counts identify two vertical pairs; the isolated 2 fixes the horizontal pair.",
+      "tags": [
+        "overlapping-groups",
+        "zero-hole",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000610",
+      "tier": "aha",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "The upper 2 and middle zero constrain the aligned southern group; the left column needs another layer.",
+      "tags": [
+        "zero-hole",
+        "crossing",
+        "solo-plus-group"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001657",
+      "tier": "crossings",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "The centre 2 needs perpendicular rays from other sockets; its own socket cannot light itself.",
+      "tags": [
+        "crossing",
+        "zero-constraints",
+        "two-shot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000897",
+      "tier": "crossings",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "The lower crossing is 2 while the upper bar stays 1, exposing the vertical layer.",
+      "tags": [
+        "crossing",
+        "unequal-bars",
+        "three-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001069",
+      "tier": "crossings",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "A stepped outline makes the corner 2 readable as a crossing; neighbouring 1s fix ray lengths.",
+      "tags": [
+        "crossing",
+        "stepped-outline",
+        "direction-reading"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000847",
+      "tier": "crossings",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "A vertical spine passes through only one horizontal bar, creating a decisive 2.",
+      "tags": [
+        "crossing",
+        "spine-and-bars",
+        "zero-constraints"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000933",
+      "tier": "crossings",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "Two aligned 2s reveal one vertical ray shared by two horizontal layers.",
+      "tags": [
+        "double-crossing",
+        "shared-spine",
+        "persistent-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-002084",
+      "tier": "crossings",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "The two crossings have unequal horizontal extents, demanding distinct sources.",
+      "tags": [
+        "double-crossing",
+        "unequal-rays",
+        "asymmetry"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000545",
+      "tier": "crossings",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "The complete top edge includes a socket lit from below; the side 2 identifies the third direction.",
+      "tags": [
+        "three-directions",
+        "positive-socket",
+        "crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000109",
+      "tier": "crossings",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "A solo horizontal layer supplies the extra left contribution while two differently directed groups explain the shape.",
+      "tags": [
+        "solo-plus-group",
+        "compression",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001016",
+      "tier": "crossings",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "The protected A3 zero and unequal bottom counts force three different pairs in a compact target.",
+      "tags": [
+        "zero-hole",
+        "pair-selection",
+        "compact-logic"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001407",
+      "tier": "crossings",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "The 3-1-2 column encodes partial protection; the lower staircase fixes the opposite-direction pair.",
+      "tags": [
+        "partial-protection",
+        "opposing-lights",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000917",
+      "tier": "grouping",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "Opposite directions reuse A2 while keeping it zero and creating different layers above and below.",
+      "tags": [
+        "zero-hole",
+        "opposing-lights",
+        "reused-dot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001930",
+      "tier": "grouping",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "Two groups share D2; the central 2 reveals their crossing and the clear third row constrains direction.",
+      "tags": [
+        "shared-dot",
+        "crossing",
+        "two-shot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001977",
+      "tier": "grouping",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "A triple group protects C3 yet doubles C4; the horizontal pair supplies the left staircase.",
+      "tags": [
+        "triple-group",
+        "zero-hole",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001820",
+      "tier": "grouping",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "Two shots explain a stepped block through three crossings, with a three-DOT horizontal layer enabling compression.",
+      "tags": [
+        "triple-group",
+        "three-crossings",
+        "two-shot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000880",
+      "tier": "grouping",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "B2's 1 within a 3-1-2 row means protection occurs in only one horizontal group.",
+      "tags": [
+        "partial-protection",
+        "mixed-solo-group",
+        "unequal-counts"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000599",
+      "tier": "grouping",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "Adding B4 increases the upper stripe without lighting the protected B3 socket.",
+      "tags": [
+        "triple-group",
+        "zero-hole",
+        "unequal-stripes"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000829",
+      "tier": "grouping",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "The triple group extends the top bar while D2 stays protected during both horizontal shots.",
+      "tags": [
+        "triple-group",
+        "endpoint-protection",
+        "direction-pivot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001504",
+      "tier": "grouping",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "Two triple groups create different holes in adjacent columns; the bottom 3 records unequal overlap.",
+      "tags": [
+        "triple-group",
+        "asymmetric-holes",
+        "two-shot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-002074",
+      "tier": "grouping",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "The central crossing resolves an upward pair and solo leftward ray; two lower bars then compress together.",
+      "tags": [
+        "three-directions",
+        "crossing",
+        "solo-plus-group"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001379",
+      "tier": "grouping",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "The 3-3-2 vertical profile requires protecting the final socket in one layer and lighting it in others.",
+      "tags": [
+        "partial-protection",
+        "zero-hole",
+        "four-distinct-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000622",
+      "tier": "four_lights",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "Opposite vertical rays and a bottom bar provide a readable three-direction entry with one crossing.",
+      "tags": [
+        "opposing-lights",
+        "crossing",
+        "orientation"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001229",
+      "tier": "four_lights",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "A corner emits in two directions; a short opposing ray explains the lone 2.",
+      "tags": [
+        "three-directions",
+        "crossing",
+        "frame"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000451",
+      "tier": "four_lights",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "The 2 above a 1 separates horizontal contribution from the upward beam, with a distinct bottom ray.",
+      "tags": [
+        "three-directions",
+        "unequal-counts",
+        "zero-constraints"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001576",
+      "tier": "four_lights",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "A filled socket on the horizontal bar demonstrates that protection applies only during that DOT's own shot.",
+      "tags": [
+        "positive-socket",
+        "persistent-layers",
+        "opposing-lights"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001104",
+      "tier": "four_lights",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "Three directions from C2 leave it empty; the edge ray explains the single doubled cell.",
+      "tags": [
+        "multi-direction-hub",
+        "zero-constraints",
+        "crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001323",
+      "tier": "four_lights",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "The lower 1-2-1 bar identifies the solo ray; grouped vertical layers account for the upper rectangle.",
+      "tags": [
+        "solo-plus-group",
+        "opposing-lights",
+        "crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001043",
+      "tier": "four_lights",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "The full bottom row hides opposing rays; the upper 2 identifies another horizontal contribution.",
+      "tags": [
+        "opposing-lights",
+        "filled-edge",
+        "crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000277",
+      "tier": "four_lights",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "Two offset 2s require four directions, with zeros separating the horizontal levels.",
+      "tags": [
+        "four-directions",
+        "double-crossing",
+        "asymmetry"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001243",
+      "tier": "four_lights",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "Two corner-like sources use all four directions, each crossing giving a distinct source clue.",
+      "tags": [
+        "four-directions",
+        "double-crossing",
+        "two-hubs"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000359",
+      "tier": "four_lights",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "A frame and central spine create three crossings; all four directions contribute through distinct shots.",
+      "tags": [
+        "four-directions",
+        "three-crossings",
+        "chapter-finale"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000063",
+      "tier": "hard_logic",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "The right-hand 2 links an upward edge ray to a short horizontal ray; the left bars require separate sources.",
+      "tags": [
+        "reverse-layers",
+        "crossing",
+        "asymmetric-bars"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001303",
+      "tier": "hard_logic",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "The bottom row splits around B4, while the top 2 links a vertical spine and horizontal ray.",
+      "tags": [
+        "opposing-lights",
+        "positive-socket",
+        "crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000535",
+      "tier": "hard_logic",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "The middle 2 and isolated lower tail distinguish plausible column sources, making zeros useful constraints.",
+      "tags": [
+        "source-choice",
+        "crossing",
+        "zero-constraints"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001362",
+      "tier": "hard_logic",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "The 2-2-3-1 bar combines solo and grouped horizontal shots with an opposing vertical pair.",
+      "tags": [
+        "solo-plus-group",
+        "three-layer-sum",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001995",
+      "tier": "hard_logic",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "A middle zero interrupts a column; upper and lower remnants force different pairings in opposite directions.",
+      "tags": [
+        "opposing-lights",
+        "pair-selection",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000904",
+      "tier": "hard_logic",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "Three horizontal bands and a shared vertical trace form a coherent five-layer decomposition.",
+      "tags": [
+        "five-distinct-layers",
+        "shared-spine",
+        "opposing-lights"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001248",
+      "tier": "hard_logic",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "Two directional hubs decompose differently; the central 2 prevents reading the target as parallel stripes.",
+      "tags": [
+        "multi-direction-hubs",
+        "crossing",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001289",
+      "tier": "hard_logic",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "A staircase of 1s and 2s connects the lower horizontal ray to two separate upward sources.",
+      "tags": [
+        "double-crossing",
+        "five-distinct-layers",
+        "staircase"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000945",
+      "tier": "hard_logic",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "The full top row conceals three contributions; the vertical 1-2-1 profile requires opposing directions.",
+      "tags": [
+        "four-directions",
+        "positive-sockets",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001686",
+      "tier": "hard_logic",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "The 1-1-3-4 top row requires partial protection and a perpendicular contribution in only three grouped shots.",
+      "tags": [
+        "partial-protection",
+        "crossing",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-002123",
+      "tier": "large_board",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "The full-height 1-1-2-2-1 column exposes opposing sources; its side arm identifies the third shot.",
+      "tags": [
+        "opposing-lights",
+        "full-height",
+        "positive-sockets"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000604",
+      "tier": "large_board",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "A broad corner frame uses the fifth-row source meaningfully; the short left column explains its lone 2.",
+      "tags": [
+        "frame",
+        "crossing",
+        "long-rays"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001106",
+      "tier": "large_board",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "A low horizontal arm, crossing 2 and unequal tails give each of four rays a visible role.",
+      "tags": [
+        "crossing",
+        "unequal-tails",
+        "four-distinct-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000837",
+      "tier": "large_board",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "The bottom crossing joins a long central trace to a short right branch, using the lower edge.",
+      "tags": [
+        "crossing",
+        "edge-reasoning",
+        "three-directions"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000168",
+      "tier": "large_board",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "The 2-1-2 row distinguishes overlapping horizontal rays from the vertical spine.",
+      "tags": [
+        "overlapping-rays",
+        "crossing",
+        "positive-socket"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001687",
+      "tier": "large_board",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "Three doubled horizontal bands force a cycle of different pairs; northern tips anchor the remaining direction.",
+      "tags": [
+        "pair-cycle",
+        "compression",
+        "distinct-groups"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001996",
+      "tier": "large_board",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "The central gap needs an edge DOT as a shield; the same pair explains two horizontal bars.",
+      "tags": [
+        "zero-hole",
+        "edge-shield",
+        "direction-pivot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001708",
+      "tier": "large_board",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "Equal long vertical traces meet unequal lower bars, exposing the extra solo horizontal layer.",
+      "tags": [
+        "solo-plus-group",
+        "crossing",
+        "unequal-bars"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001121",
+      "tier": "large_board",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "Two lower columns and unequal horizontal bars distinguish a vertical group from solo-plus-group compression.",
+      "tags": [
+        "solo-plus-group",
+        "orthogonal-layers",
+        "compression"
+      ]
+    },
+    {
+      "candidate_id": "candidate-002149",
+      "tier": "large_board",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "Three sockets generate two crossings and a local 3; every paired shot has a different visible footprint.",
+      "tags": [
+        "three-sockets",
+        "double-crossing",
+        "three-distinct-groups"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000419",
+      "tier": "mastery",
+      "order_in_tier": 1,
+      "capstone": false,
+      "reason": "Two narrow bands hide opposing ray lengths and one vertical contribution; six sockets create source choices.",
+      "tags": [
+        "source-choice",
+        "opposing-lights",
+        "compact-footprint"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000894",
+      "tier": "mastery",
+      "order_in_tier": 2,
+      "capstone": false,
+      "reason": "The bottom 1-2-2-3-2 profile combines opposing edge rays with unequal downward columns.",
+      "tags": [
+        "opposing-lights",
+        "double-crossing",
+        "edge-profile"
+      ]
+    },
+    {
+      "candidate_id": "candidate-002192",
+      "tier": "mastery",
+      "order_in_tier": 3,
+      "capstone": false,
+      "reason": "The quiet upper column constrains the lower 2 and 3, yielding five distinct layers in a narrow shape.",
+      "tags": [
+        "reverse-layers",
+        "five-distinct-layers",
+        "unequal-column"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000432",
+      "tier": "mastery",
+      "order_in_tier": 4,
+      "capstone": false,
+      "reason": "Three crossings form a ladder; the 1-2-3-2-1 column explains opposing vertical sources.",
+      "tags": [
+        "three-crossings",
+        "opposing-lights",
+        "five-distinct-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000171",
+      "tier": "mastery",
+      "order_in_tier": 5,
+      "capstone": false,
+      "reason": "Two separated hubs use all four directions; the crossings determine which hub supplies each arm.",
+      "tags": [
+        "four-directions",
+        "two-hubs",
+        "double-crossing"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001490",
+      "tier": "mastery",
+      "order_in_tier": 6,
+      "capstone": false,
+      "reason": "A stepped upper block and split lower tails link four layers, requiring both solo and grouped southern shots.",
+      "tags": [
+        "mixed-solo-group",
+        "source-choice",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001293",
+      "tier": "mastery",
+      "order_in_tier": 7,
+      "capstone": false,
+      "reason": "The 2-1-4-4-3 column needs different endpoints protected in different shots; the edge tail fixes the auxiliary DOT.",
+      "tags": [
+        "partial-protection",
+        "opposing-lights",
+        "three-shot-synthesis"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001669",
+      "tier": "mastery",
+      "order_in_tier": 8,
+      "capstone": false,
+      "reason": "A completely clear middle row coexists with a lower 1-3-1 bar, forcing protection and a crossing.",
+      "tags": [
+        "zero-hole",
+        "crossing",
+        "three-shot-synthesis"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001583",
+      "tier": "mastery",
+      "order_in_tier": 9,
+      "capstone": false,
+      "reason": "Opposing triple groups form unequal lower bands; the central upward ray explains the remaining counts.",
+      "tags": [
+        "triple-groups",
+        "opposing-lights",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001688",
+      "tier": "mastery",
+      "order_in_tier": 10,
+      "capstone": false,
+      "reason": "Horizontal and vertical groups protect intersecting holes; sparse 3s and 2s resolve the three-shot synthesis.",
+      "tags": [
+        "triple-group",
+        "multiple-holes",
+        "chapter-finale"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001992",
+      "tier": "grouping",
+      "order_in_tier": 1,
+      "capstone": true,
+      "reason": "Two protected holes, a crossing and an unequal bottom band make four layers reconstructible on 4×4.",
+      "tags": [
+        "multiple-holes",
+        "crossing",
+        "compact-synthesis"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001152",
+      "tier": "hard_logic",
+      "order_in_tier": 2,
+      "capstone": true,
+      "reason": "The 1-2-3-1 top edge unifies four directions and a vertical socket contribution through five distinct rays.",
+      "tags": [
+        "four-directions",
+        "edge-profile",
+        "five-distinct-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000532",
+      "tier": "grouping",
+      "order_in_tier": 3,
+      "capstone": true,
+      "reason": "The dense lower band becomes readable through the asymmetric 3 and partially protected A4 socket.",
+      "tags": [
+        "partial-protection",
+        "three-crossings",
+        "dense-synthesis"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001580",
+      "tier": "hard_logic",
+      "order_in_tier": 4,
+      "capstone": true,
+      "reason": "Three crossings bind five distinct rays across all four directions; zeros constrain the busy centre.",
+      "tags": [
+        "four-directions",
+        "three-crossings",
+        "five-distinct-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000313",
+      "tier": "large_board",
+      "order_in_tier": 5,
+      "capstone": true,
+      "reason": "The 2-2-3-1-2 spine demands solo and grouped opposite beams plus a horizontal layer.",
+      "tags": [
+        "partial-protection",
+        "opposing-lights",
+        "solo-plus-group"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001181",
+      "tier": "large_board",
+      "order_in_tier": 6,
+      "capstone": true,
+      "reason": "The 3-1-2-2 horizontal profile and upper 3 require different protections in perpendicular grouped shots.",
+      "tags": [
+        "multiple-protections",
+        "orthogonal-groups",
+        "reverse-layers"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001771",
+      "tier": "mastery",
+      "order_in_tier": 7,
+      "capstone": true,
+      "reason": "One distant pair changes role between vertical shielding and horizontal bars, with all four directions essential.",
+      "tags": [
+        "four-directions",
+        "zero-hole",
+        "direction-pivot"
+      ]
+    },
+    {
+      "candidate_id": "candidate-001609",
+      "tier": "mastery",
+      "order_in_tier": 8,
+      "capstone": true,
+      "reason": "Opposing triple groups preserve different gaps; the upper rectangle anchors the broad lower structure's decomposition.",
+      "tags": [
+        "triple-groups",
+        "opposing-lights",
+        "multiple-holes"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000594",
+      "tier": "mastery",
+      "order_in_tier": 9,
+      "capstone": true,
+      "reason": "Five different grouped layers explain a dense stepped field, including a socket protected in only one layer.",
+      "tags": [
+        "five-distinct-groups",
+        "partial-protection",
+        "dense-synthesis"
+      ]
+    },
+    {
+      "candidate_id": "candidate-000842",
+      "tier": "mastery",
+      "order_in_tier": 10,
+      "capstone": true,
+      "reason": "Four groups reconcile protection in both axes, a top 3 and a quiet lower scaffold: the strongest synthesis.",
+      "tags": [
+        "triple-groups",
+        "multiple-holes",
+        "crossings",
+        "final-synthesis"
+      ]
+    }
+  ]
+}
