@@ -56,6 +56,7 @@ var profile: RefCounted = PROFILE.new()
 var busy: bool = false
 var solved: bool = false
 var save_failed: bool = false
+var last_stack: int = 0
 var frame: MarginContainer
 var column: VBoxContainer
 var board: PanelContainer
@@ -265,6 +266,7 @@ func _load_stage(index: int) -> void:
 	profile.stage_index = stage_index
 	stage = stages[stage_index]
 	selected_dots.clear()
+	last_stack = 0
 	selected_light = str(stage["allowed_lights"][0])
 	history = _validated_history(profile.runs.get(str(stage["id"]), []))
 	_rebuild_accumulated()
@@ -339,6 +341,10 @@ func _refresh_all() -> void:
 		result_title.add_theme_color_override("font_color", STYLE.GOLD if at_par else STYLE.MINT)
 		result_panel.add_theme_stylebox_override("panel", STYLE.box(Color("2c2a20") if at_par else Color("203c35"), STYLE.GOLD if at_par else Color("567c66"), 12, 12))
 		result_body.text = tr("PAR %d · Every shot earned its place.") % history.size() if at_par else tr("Cleared in %d. Can you find the %d-shot solution?") % [history.size(), int(stage["par"])]
+		# The status line is hidden once solved, so a clearing shot that stacked is named here (e.g. study 007).
+		if last_stack > 1:
+			result_body.text += "
+" + _stack_message()
 		next_button.text = "EXPLORE THE STUDIES" if stage_index == stages.size() - 1 else "NEXT STUDY  →"
 		# CLEAR above PAR invites one more compression attempt; PAR moves on.
 		retry_button.visible = not at_par
@@ -358,6 +364,7 @@ func _on_cell_pressed(cell: Vector2i) -> void:
 	else:
 		selected_dots.append(cell)
 	board.clear_delta()
+	last_stack = 0
 	_play("place")
 	status_label.text = _stage_hint()
 	_refresh_all()
@@ -384,6 +391,7 @@ func _on_fire_pressed() -> void:
 	if duration > 0.0:
 		await get_tree().create_timer(duration).timeout
 	accumulated = RULES.apply_shot(accumulated, shot["delta"])
+	last_stack = _max_layer(shot["delta"])
 	selected_dots.clear()
 	busy = false
 	if RULES.is_solved(stage, accumulated):
@@ -394,9 +402,9 @@ func _on_fire_pressed() -> void:
 	elif RULES.is_overshot(stage, accumulated):
 		status_label.text = "Too much shadow. Coral cells show the excess. Undo and try another layer."
 		status_label.add_theme_color_override("font_color", STYLE.ERROR)
-	elif _max_layer(shot["delta"]) > 1:
+	elif last_stack > 1:
 		# A single shot that stacks shadows is the rule most often misread; name it right away.
-		status_label.text = tr("Shadows overlapped: one shot added +%d to a cell. DOTs in a line each cast their own shadow.") % _max_layer(shot["delta"])
+		status_label.text = _stack_message()
 		status_label.add_theme_color_override("font_color", STYLE.GOLD)
 	else:
 		status_label.text = "That shadow stays. Place the next layer."
@@ -417,6 +425,7 @@ func _on_undo_pressed() -> void:
 	_rebuild_accumulated()
 	board.stop_effects()
 	board.clear_delta()
+	last_stack = 0
 	status_label.text = "One layer rewound. Try a different grouping or light."
 	status_label.add_theme_color_override("font_color", STYLE.PAPER)
 	_play("place")
@@ -431,6 +440,7 @@ func _on_reset_pressed() -> void:
 	_rebuild_accumulated()
 	board.stop_effects()
 	board.clear_delta()
+	last_stack = 0
 	status_label.text = _stage_hint()
 	status_label.add_theme_color_override("font_color", STYLE.PAPER)
 	_refresh_all()
@@ -633,6 +643,9 @@ func _max_layer(delta: Array) -> int:
 		for value: Variant in row:
 			result = maxi(result, int(value))
 	return result
+
+func _stack_message() -> String:
+	return tr("Shadows overlapped: one shot added +%d to a cell. DOTs in a line each cast their own shadow.") % last_stack
 
 func _stage_hint() -> String:
 	return tr(str(stage.get("hint_key", HINTS[stage_index % HINTS.size()])))

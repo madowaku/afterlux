@@ -84,6 +84,13 @@ jobs:
           timeout 360s godot --headless --path . --script tests/gameplay_flow.gd 2>&1 | tee artifacts/ci-gameplay.log
           grep -q 'AFTERLUX gameplay flow: PASS' artifacts/ci-gameplay.log
           ! grep -Eq 'SCRIPT ERROR:|^ERROR:|^WARNING:' artifacts/ci-gameplay.log
+      - name: Shadow-layer readability flow
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 120s godot --headless --path . --script tests/shadow_layers_flow.gd 2>&1 | tee artifacts/ci-shadow-layers.log
+          grep -q 'AFTERLUX shadow layers: PASS' artifacts/ci-shadow-layers.log
+          ! grep -Eq 'SCRIPT ERROR:|^ERROR:|^WARNING:' artifacts/ci-shadow-layers.log
       - name: Boot real main scene (headless only)
         shell: bash
         run: |

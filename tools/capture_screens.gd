@@ -23,6 +23,11 @@ func _run() -> void:
 	for locale: String in ["en", "ja"]:
 		game._set_language(locale)
 		await _capture_stack_lesson(locale)
+	game._set_language("ja")
+	game._load_stage(6)
+	game._on_reset_pressed()
+	await _quick_cast(["A1", "A2"], "N")
+	await _snap("007_stacked_clear_ja")
 	game._set_language("en")
 	game._load_stage(19)
 	game._on_reset_pressed()
