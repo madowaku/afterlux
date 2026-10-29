@@ -52,6 +52,10 @@ jobs:
           set -o pipefail
           mkdir -p artifacts
           touch artifacts/.gdignore
+          # On a fresh runner, Godot may load the project theme before importing
+          # its bundled font. Bootstrap once, then require a completely clean
+          # second import so real persistent errors are never ignored.
+          timeout 180s godot --headless --path . --import > artifacts/ci-import-bootstrap.log 2>&1
           timeout 180s godot --headless --path . --import 2>&1 | tee artifacts/ci-import.log
           if grep -Eq 'SCRIPT ERROR:|^ERROR:' artifacts/ci-import.log; then
             echo "::error::Godot import logged an error"
