@@ -73,6 +73,7 @@ var fire_button: Button
 var undo_button: Button
 var reset_button: Button
 var next_button: Button
+var retry_button: Button
 var levels_button: Button
 var help_button: Button
 var sound_button: Button
@@ -163,7 +164,7 @@ func _build_ui() -> void:
 	board.name = "Board"
 	board_column.add_child(board)
 	board.cell_pressed.connect(_on_cell_pressed)
-	var legend: Label = STYLE.label("○  DOT socket       1  shadow still needed", 10, STYLE.MUTED)
+	var legend: Label = STYLE.label("○  DOT socket    1  shadow still needed    ●○  layers", 10, STYLE.MUTED)
 	legend.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	board_column.add_child(legend)
 	var instruction: VBoxContainer = VBoxContainer.new()
@@ -203,9 +204,15 @@ func _build_ui() -> void:
 	result_body = STYLE.label("", 12)
 	result_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	result_column.add_child(result_body)
+	var result_actions: HBoxContainer = _row(result_column, "ResultActions")
+	retry_button = STYLE.button("TRY FOR PAR", _on_reset_pressed)
+	retry_button.name = "Retry"
+	retry_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	result_actions.add_child(retry_button)
 	next_button = STYLE.button("NEXT STUDY  →", _on_next_stage)
 	next_button.name = "Next"
-	result_column.add_child(next_button)
+	next_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	result_actions.add_child(next_button)
 	var utility: HBoxContainer = _row(column, "Utility")
 	undo_button = STYLE.button("Undo", _on_undo_pressed)
 	undo_button.name = "Undo"
@@ -323,13 +330,20 @@ func _refresh_all() -> void:
 	reset_button.disabled = busy or (history.is_empty() and selected_dots.is_empty())
 	help_button.disabled = busy
 	levels_button.disabled = busy
+	board.set_aim("" if solved or busy else selected_light)
 	result_panel.visible = solved
 	status_label.get_parent().visible = not solved
 	if solved:
-		var at_par: bool = history.size() == int(stage["par"])
+		var at_par: bool = history.size() <= int(stage["par"])
 		result_title.text = "Perfectly simple." if at_par else "A beautiful beginning."
+		result_title.add_theme_color_override("font_color", STYLE.GOLD if at_par else STYLE.MINT)
+		result_panel.add_theme_stylebox_override("panel", STYLE.box(Color("2c2a20") if at_par else Color("203c35"), STYLE.GOLD if at_par else Color("567c66"), 12, 12))
 		result_body.text = tr("PAR %d · Every shot earned its place.") % history.size() if at_par else tr("Cleared in %d. Can you find the %d-shot solution?") % [history.size(), int(stage["par"])]
 		next_button.text = "EXPLORE THE STUDIES" if stage_index == stages.size() - 1 else "NEXT STUDY  →"
+		# CLEAR above PAR invites one more compression attempt; PAR moves on.
+		retry_button.visible = not at_par
+		STYLE.accent(retry_button, not at_par)
+		STYLE.accent(next_button, at_par)
 	step_label.text = tr("01 / PLACE A DOT") if selected_dots.is_empty() else tr("02 / LIGHT FROM %s · READY") % tr({"N": "NORTH", "S": "SOUTH", "W": "WEST", "E": "EAST"}[selected_light])
 	_update_sound_button()
 
@@ -343,6 +357,7 @@ func _on_cell_pressed(cell: Vector2i) -> void:
 		return
 	else:
 		selected_dots.append(cell)
+	board.clear_delta()
 	_play("place")
 	status_label.text = _stage_hint()
 	_refresh_all()
@@ -365,9 +380,9 @@ func _on_fire_pressed() -> void:
 		coords.append(RULES.cell_to_coord(cell))
 	history.append({"dots": coords, "light": selected_light})
 	_play("cast")
-	board.cast(selected_light, profile.reduced_motion)
-	if not profile.reduced_motion:
-		await get_tree().create_timer(0.19).timeout
+	var duration: float = board.cast(selected_light, selected_dots, profile.reduced_motion)
+	if duration > 0.0:
+		await get_tree().create_timer(duration).timeout
 	accumulated = RULES.apply_shot(accumulated, shot["delta"])
 	selected_dots.clear()
 	busy = false
@@ -379,10 +394,15 @@ func _on_fire_pressed() -> void:
 	elif RULES.is_overshot(stage, accumulated):
 		status_label.text = "Too much shadow. Coral cells show the excess. Undo and try another layer."
 		status_label.add_theme_color_override("font_color", STYLE.ERROR)
+	elif _max_layer(shot["delta"]) > 1:
+		# A single shot that stacks shadows is the rule most often misread; name it right away.
+		status_label.text = tr("Shadows overlapped: one shot added +%d to a cell. DOTs in a line each cast their own shadow.") % _max_layer(shot["delta"])
+		status_label.add_theme_color_override("font_color", STYLE.GOLD)
 	else:
 		status_label.text = "That shadow stays. Place the next layer."
 		status_label.add_theme_color_override("font_color", STYLE.PAPER)
 	_refresh_all()
+	board.show_delta(shot["delta"], profile.reduced_motion)
 	if not profile.reduced_motion:
 		board.flash_delta(shot["delta"])
 	_save()
@@ -396,6 +416,7 @@ func _on_undo_pressed() -> void:
 	selected_dots.clear()
 	_rebuild_accumulated()
 	board.stop_effects()
+	board.clear_delta()
 	status_label.text = "One layer rewound. Try a different grouping or light."
 	status_label.add_theme_color_override("font_color", STYLE.PAPER)
 	_play("place")
@@ -409,6 +430,7 @@ func _on_reset_pressed() -> void:
 	selected_dots.clear()
 	_rebuild_accumulated()
 	board.stop_effects()
+	board.clear_delta()
 	status_label.text = _stage_hint()
 	status_label.add_theme_color_override("font_color", STYLE.PAPER)
 	_refresh_all()
@@ -567,8 +589,9 @@ func _show_help() -> void:
 	var lessons: Array[Array] = [
 		["01  PLACE", "Tap a ring to place a DOT. Tap it again to remove it."],
 		["02  CAST", "Pick a light. Each DOT adds 1 shadow to every cell beyond it. Shadows stay between shots."],
-		["03  DISCOVER", "DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results."],
-		["04  COMPRESS", "Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited."],
+		["03  STACK", "Every DOT casts its own shadow. DOTs in the same line overlap, so one shot can add 2 to a cell. The dots under each cell count its layers."],
+		["04  DISCOVER", "DOT cells receive no shadow that shot, but rays continue through them. Grouping and splitting give different results."],
+		["05  COMPRESS", "Any exact solution is a clear. PAR is the proven fewest shots. Undo is unlimited."],
 	]
 	for lesson: Array in lessons:
 		overlay_column.add_child(STYLE.label(lesson[0], 11, STYLE.GOLD))
@@ -603,6 +626,13 @@ func _toggle_motion() -> void:
 	var button: Button = overlay_column.get_node("Motion") as Button
 	button.text = "Motion: reduced" if profile.reduced_motion else "Motion: full"
 	_save()
+
+func _max_layer(delta: Array) -> int:
+	var result: int = 0
+	for row: Array in delta:
+		for value: Variant in row:
+			result = maxi(result, int(value))
+	return result
 
 func _stage_hint() -> String:
 	return tr(str(stage.get("hint_key", HINTS[stage_index % HINTS.size()])))

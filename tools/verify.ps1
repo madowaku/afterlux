@@ -16,7 +16,7 @@ try {
 
     python tools/solver/verify_stages.py
     if ($LASTEXITCODE -ne 0) { throw 'Independent solver verification failed.' }
-    foreach ($test in @('tools/smoke_test.gd', 'tests/gameplay_flow.gd')) {
+    foreach ($test in @('tools/smoke_test.gd', 'tests/gameplay_flow.gd', 'tests/shadow_layers_flow.gd')) {
         $stem = [IO.Path]::GetFileNameWithoutExtension($test)
         $testOutput = & $resolvedGodot --headless --debug --ignore-error-breaks --path $projectRoot --log-file "artifacts/$stem.log" --script $test 2>&1
         $testCode = $LASTEXITCODE

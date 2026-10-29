@@ -66,4 +66,6 @@ static func accent(button_node: Button, active: bool) -> void:
 	button_node.add_theme_stylebox_override("normal", box(MINT if active else PANEL, MINT if active else EDGE))
 	button_node.add_theme_color_override("font_color", INK if active else PAPER)
 	button_node.add_theme_color_override("font_hover_color", INK if active else MINT)
+	button_node.add_theme_color_override("font_focus_color", INK if active else PAPER)
+	button_node.add_theme_color_override("font_hover_pressed_color", INK)
 	button_node.add_theme_stylebox_override("hover", box(Color("d4f6e6") if active else Color("20373b"), MINT))
